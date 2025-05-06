@@ -1,7 +1,7 @@
 # ABNet
 Adaptive explicit-Barrier Net for Safe and Scalable Robot Learning (Implementation of our ICML 2025 paper)
 
-![pipeline](imgs/abnet.pdf) 
+![pipeline](imgs/abnet.png) 
 
 
 # Install eBQP (explicit-Barrier based QP solver)
