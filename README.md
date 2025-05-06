@@ -16,21 +16,21 @@ pip install -e .
 
 eBQP is a quadratic program (QP) solver that gives the closed-form solution of a QP, which shows superior performance and stability compared to existing solvers (such as QPFunction in qpth from OptNet). The comparison results are shown in the paper.
 
-eBQP only considers inequality constraints of a QP (most CBF-based methods are based in this form) in the form:
+eBQP only considers inequality constraints of a QP (most CBF-based methods are based in this form) in the form (an equality constraint can be transformed into two inequality constraints):
 
-min_x 1/2 x^THx + F^Tx
+min_x (1/2 x^THx + F^Tx)
 
 s.t. Ax <= b
 
 where
 
-H - dimension of nBatch x q x q (dimension of x is q)
+H - dimension: (nBatch, q, q) (dimension of x is q)
 
-F - dimension of nBatch x q
+F - dimension: (nBatch, q)
 
-A - dimension of nBatch x n_constriants x q
+A - dimension: (nBatch, nConstraints, q)
 
-b - dimension of nBatch x n_constraints
+b - dimension: (nBatch, nConstraints)
 
 Usage of eBQP:
 ```
