@@ -19,6 +19,7 @@ eBQP is a quadratic program (QP) solver that gives the closed-form solution of a
 eBQP only considers inequality constraints of a QP (most CBF-based methods are based in this form) in the form:
 
 min_x 1/2 x^THx + F^Tx
+
 s.t. Ax <= b
 
 where
