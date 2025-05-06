@@ -32,7 +32,7 @@ A - dimension: (nBatch, nConstraints, q)
 
 b - dimension: (nBatch, nConstraints)
 
-Usage of eBQP:
+## Usage of eBQP:
 ```
 from eBQP import eBQP
 
