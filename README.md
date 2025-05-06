@@ -14,9 +14,9 @@ pip install -e .
 
 ## Introduction to eBQP
 
-eBQP is a quadratic program (QP) solver that gives the closed-form solution of a QP, which shows superior performance and stability compared to existing solvers (such as QPFunction in qpth from OptNet). The comparison results are shown in the paper.
+eBQP is a quadratic program (QP) solver that gives the closed-form solution of a QP, which shows superior performance and stability compared to existing solvers (such as qpth.QPFunction from OptNet). The comparison results are shown in the paper.
 
-eBQP only considers inequality constraints of a QP (most CBF-based methods are based in this form) in the form (an equality constraint can be transformed into two inequality constraints):
+An equality constraint can be transformed into two inequality constraints, and thus, eBQP only considers inequality constraints of a QP (most CBF-based methods are based in this form) in the form:
 
 min_x (1/2 x^THx + F^Tx)
 
@@ -49,6 +49,23 @@ pip install pytorch-lightning==1.5.8 opencv-python==4.5.2.54 matplotlib==3.5.1 f
 pip install qpth cvxpy cvxopt
 ```
 
+# Examples
+Run the following in the terminal/environment before training or testing to address potential bugs:
+```
+export PYTHONNOUSERSITE=True
+export PYOPENGL_PLATFORM=egl
+```
+## 2D obstacle avoidance
+
+### Train a model:
+```
+python robot-abnet.py
+```
+
+### Test a model:
+```
+python test_robot_abnet.py
+```
 
 
 # Reference
