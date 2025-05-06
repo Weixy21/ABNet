@@ -55,7 +55,7 @@ Run the following in the terminal/environment before training or testing to addr
 export PYTHONNOUSERSITE=True
 export PYOPENGL_PLATFORM=egl
 ```
-## 2D obstacle avoidance
+## 2D obstacle avoidance / Manipulation
 
 ### Train a model:
 ```
