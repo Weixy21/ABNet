@@ -23,9 +23,13 @@ min_x 1/2 x^THx + F^Tx
 s.t. Ax <= b
 
 where
+
 H - dimension of nBatch x q x q (dimension of x is q)
+
 F - dimension of nBatch x q
+
 A - dimension of nBatch x n_constriants x q
+
 b - dimension of nBatch x n_constraints
 
 Usage of eBQP:
