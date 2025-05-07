@@ -60,7 +60,7 @@ from eBQP import eBQP_g as eBQP
 
 x = eBQP(H, F, A, b, barrier = barrier, option = 'min')
 ```
-Note that only the min approach to deal with constraints whose number is greater than two inside eBQP. The log_sum_exp approach to merge multiple constraints into two is usually implemented outside the eBQP.
+Note that only the min approach, to deal with constraints whose number is greater than two, is implemented inside eBQP. The log_sum_exp approach to merge multiple constraints into two is usually implemented outside the eBQP.
 
 # Install other packages (vista, torch, etc.)
 ```
