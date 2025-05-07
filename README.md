@@ -50,7 +50,7 @@ else if the H of the QP is an identity matrix (less efficient)
 ```
 from eBQP import eBQP_I as eBQP
 
-x = eBQP(H, F, A, b, barrier, option = 'min')
+x = eBQP(H, F, A, b, barrier = barrier, option = 'min')
 ```
 where barrier is a tensor of barrier functions/risk funcntions that quantify the importance/activation of constraints
 
@@ -58,7 +58,7 @@ else (general case of a QP)
 ```
 from eBQP import eBQP_g as eBQP
 
-x = eBQP(H, F, A, b, barrier, option = 'min')
+x = eBQP(H, F, A, b, barrier = barrier, option = 'min')
 ```
 Note that only the min approach to deal with constraints whose number is greater than two inside eBQP. The log_sum_exp approach to merge multiple constraints into two is usually implemented outside the eBQP.
 
