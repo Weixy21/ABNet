@@ -6,7 +6,7 @@ from torch.nn.parameter import Parameter
 from qpth.qp import QPFunction
 import numpy as np
 from my_classes import test_solver as solver
-from eBQP import eBQP
+from eBQP import eBQP, eBQP_I, eBQP_g
 
 
 class BarrierNet(nn.Module):
@@ -319,7 +319,7 @@ class ABNet(nn.Module):
         G0 = torch.cat([G10, G20],dim=1)
         h0 = torch.cat([h1, h2],dim=1)
 
-        H = Variable(torch.eye(self.nCls))
+        H = Variable(torch.eye(self.nCls,dtype=torch.float64))
         H = H.unsqueeze(0).expand(nBatch, self.nCls, self.nCls).to(self.device)
         
         x = eBQP(H, -x51, G0, h0)

@@ -17,7 +17,7 @@ pip install -e .
 
 ## Introduction to eBQP
 
-eBQP is a quadratic program (QP) solver that gives the closed-form solution of a QP, and it is capable to back propagate loss from the output of the QP to the input (parameters, etc.) of the QP. eBQP shows superior performance and stability compared to existing solvers (such as qpth.QPFunction from [OptNet](https://github.com/locuslab/optnet)). The computation comparison in terms of batch size and model heads (size) are shown below (explicit-Barrier and ABNet are with eBQP, dQP and BNet are with qpth.QPFunction from OptNet):
+eBQP is a quadratic program (QP) solver (or neural network layer) that gives the closed-form solution of a QP, and it is capable to back propagate loss from the output of the QP to the input (parameters) of the QP in PyTorch. eBQP shows superior performance and stability compared to existing solvers (such as qpth.QPFunction from [OptNet](https://github.com/locuslab/optnet)). The computation comparison in terms of batch size and model heads (size) are shown below (explicit-Barrier and ABNet are with eBQP, dQP and BNet are with qpth.QPFunction from OptNet):
 
 ![pipeline](imgs/compare_batch.png) 
 
@@ -40,11 +40,27 @@ A - dimension: (nBatch, nConstraints, q)
 b - dimension: (nBatch, nConstraints)
 
 ## Usage of eBQP:
+If the H of the QP is an identity matrix, and the number of constraint is 2 (the most efficient)
 ```
 from eBQP import eBQP
 
 x = eBQP(H, F, A, b)
 ```
+else if the H of the QP is an identity matrix (less efficient)
+```
+from eBQP import eBQP_I as eBQP
+
+x = eBQP(H, F, A, b, barrier, option = 'min')
+```
+where barrier is a tensor of barrier functions/risk funcntions that quantify the importance/activation of constraints
+
+else (general case of a QP)
+```
+from eBQP import eBQP_g as eBQP
+
+x = eBQP(H, F, A, b, barrier, option = 'min')
+```
+Note that only the min approach to deal with constraints whose number is greater than two inside eBQP. The log_sum_exp approach to merge multiple constraints into two is usually implemented outside the eBQP.
 
 # Install other packages (vista, torch, etc.)
 ```
