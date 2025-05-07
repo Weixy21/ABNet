@@ -17,7 +17,7 @@ pip install -e .
 
 ## Introduction to eBQP
 
-eBQP is a quadratic program (QP) solver that gives the closed-form solution of a QP, and it is capable to back propagate loss from the output of the QP to the input (parameters, etc.) of the QP. eBQP shows superior performance and stability compared to existing solvers (such as qpth.QPFunction from [OptNet](https://github.com/locuslab/optnet)). The computation comparison in terms of batch size and ABNet heads (model size) are shown below (explicit-Barrier and ABNet are with eBQP, dQP and BNet are with qpth.QPFunction from OptNet):
+eBQP is a quadratic program (QP) solver that gives the closed-form solution of a QP, and it is capable to back propagate loss from the output of the QP to the input (parameters, etc.) of the QP. eBQP shows superior performance and stability compared to existing solvers (such as qpth.QPFunction from [OptNet](https://github.com/locuslab/optnet)). The computation comparison in terms of batch size and model heads (size) are shown below (explicit-Barrier and ABNet are with eBQP, dQP and BNet are with qpth.QPFunction from OptNet):
 
 ![pipeline](imgs/compare_batch.png) 
 
