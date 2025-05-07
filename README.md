@@ -1,5 +1,8 @@
 # ABNet
-Adaptive explicit-Barrier Net for Safe and Scalable Robot Learning (Implementation of our ICML 2025 paper)
+
+[Paper](https://openreview.net/forum?id=ymlwqfxuUc)  [arXiv](https://arxiv.org/abs/2406.13025)
+
+Adaptive explicit-Barrier Net for Safe and Scalable Robot Learning (Implementation of our ABNet paper in ICML2025)
 
 ![pipeline](imgs/abnet.png) 
 
@@ -14,7 +17,7 @@ pip install -e .
 
 ## Introduction to eBQP
 
-eBQP is a quadratic program (QP) solver that gives the closed-form solution of a QP, and it is capable to back propagate loss from the output of the QP to the input (parameters, etc.) of the QP. eBQP shows superior performance and stability compared to existing solvers (such as qpth.QPFunction from OptNet). The computation comparison in terms of batch size and ABNet heads (model size) are shown below (explicit-Barrier:eBQP, OptNet:dQP):
+eBQP is a quadratic program (QP) solver that gives the closed-form solution of a QP, and it is capable to back propagate loss from the output of the QP to the input (parameters, etc.) of the QP. eBQP shows superior performance and stability compared to existing solvers (such as qpth.QPFunction from [OptNet](https://github.com/locuslab/optnet)). The computation comparison in terms of batch size and ABNet heads (model size) are shown below (explicit-Barrier and ABNet are with eBQP, dQP and BNet are with qpth.QPFunction from OptNet):
 
 ![pipeline](imgs/compare_batch.png) 
 
