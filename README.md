@@ -90,6 +90,17 @@ python robot-abnet.py
 python test_robot_abnet.py
 ```
 
+## Vision-based end-to-end autonomous driving
+Please refer to the [BarrierNet repo](https://github.com/Weixy21/BarrierNet) for more information regarding the dataset, setup, training, and testing, etc.
+### Train a model:
+```
+bash run_example.sh
+```
+
+### Test a model:
+```
+bash run_example.sh
+```
 
 # Reference
 If you find this helpful, please cite our work:
