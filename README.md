@@ -94,12 +94,12 @@ python test_robot_abnet.py
 Please refer to the [BarrierNet repo](https://github.com/Weixy21/BarrierNet) for more information regarding the dataset, setup, training, and testing, etc.
 ### Train a model:
 ```
-bash run_example.sh
+bash ./scripts/run_example.sh
 ```
 
 ### Test a model:
 ```
-bash run_example.sh
+bash ./scripts/eval_example.sh
 ```
 
 # Reference
